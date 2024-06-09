@@ -7,12 +7,14 @@
     "@prisma/client": "^5.10.2",
     "@prisma/extension-accelerate": "^0.6.3",
     "@sumana1005/medium-common": "^1.0.0",
+    "buffer": "^6.0.3",
     "hono": "^4.0.7",
     "prisma": "^5.10.2",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240208.0",
+    "@types/node": "^20.12.11",
     "wrangler": "^3.25.0"
   }
 }

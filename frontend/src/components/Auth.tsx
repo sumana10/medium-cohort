@@ -15,9 +15,9 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
         try{
             const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type}`, postInputs);
             const  data = response.data;
-            console.log(data);
+            console.log(response.statusText);
             localStorage.setItem( "userInfo", data.jwt);
-            navigate("/blogs")
+           // navigate("/blogs")
         }
         catch(error){
             alert("Don't cry")

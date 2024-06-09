@@ -4,6 +4,7 @@ import {Appbar, Shimmer, BlogCard} from '../components'
 const Blogs = () => {
 
   const { loading, blogs } = useBlogs();
+  
   console.log(blogs)
   if (loading) {
     return <div>

@@ -5,6 +5,7 @@ import { sign, verify } from "hono/jwt";
 import { createBlogInput,updateBlogInput } from "@sumana1005/medium-common";
 
 
+
 export const blogRouter = new Hono<{
 	Bindings: {
 		DATABASE_URL: string;
@@ -114,3 +115,36 @@ blogRouter.get('/:id', async (c) => {
 
 	return c.json(post);
 })
+
+// blogRouter.get('/single/:id', async (c) => {
+//     const id = c.req.param('id')
+
+//    // const body = await c.req.json()
+
+//     const prisma = new PrismaClient({
+//         datasourceUrl: c.env.DATABASE_URL,
+//     }).$extends(withAccelerate());
+
+//     const blog = await prisma.post.findUnique({
+//         where: {
+//             id
+//         },
+//         select: {
+//             title: true,
+//             content: true,
+//             author: {
+//                 select: {
+//                     name:true
+//                 }
+//             }
+//         }
+//     })
+
+//     if (!blog) {
+//         c.status(404)
+//         return c.json({error:"Blog not found"})
+//     }
+
+//     return c.json(blog)
+
+//   })

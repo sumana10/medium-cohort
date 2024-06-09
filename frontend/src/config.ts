@@ -1,1 +1,5 @@
-export const BACKEND_URL="https://backend.sumana1005.workers.dev"
+//export const BACKEND_URL="https://backend.sumana1005.workers.dev"
+//export const BACKEND_URL="https://backend.my-awesome-blogs.workers.dev"
+//export const BACKEND_URL="https://sudo.ue213005-akshat-cse.workers.dev"
+//export const BACKEND_URL="https://backend.gaud23814.workers.dev"
+export const BACKEND_URL="http://127.0.0.1:8787"

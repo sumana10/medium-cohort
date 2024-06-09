@@ -20,9 +20,9 @@ const Blog = () => {
     </div>
   }
   return (
-    <div>
+    // <div>
       <SingleBlog blog={blog}/>
-    </div>
+    // </div>
   )
 }
 

@@ -3,17 +3,18 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { BACKEND_URL } from "../config";
 
-export interface Blog {
+interface Blog {
 
     "title": string,
     "content": string,
     "id": number,
+    "publishDate": Date | string
     "author": {
         "name": string
     }
 
 }
-export const useBlogs = () => {
+export const useBlogs = (): { loading: boolean; blogs: Blog[] } => {
     const [loading, setLoading] = useState(true);
     const [blogs, setBlogs] = useState<Blog[]>([]);
 
@@ -21,11 +22,12 @@ export const useBlogs = () => {
         axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
             method: "GET",
             headers: {
-                "Authorization": "Bearer " + localStorage.getItem("userInfo")
+                "Authorization": localStorage.getItem("userInfo")
             }
         })
             .then(response => {
-                setBlogs(response.data);
+                setBlogs(response.data.blogs);
+                console.log(response.data.blogs)
                 setLoading(false);
             })
             .catch(error => {
@@ -47,7 +49,7 @@ export const useBlog = ({ id }: { id: string }) => {
 
     useEffect(() => {
         axios.get(`${BACKEND_URL}/api/v1/blog/${id}`, {
-            method: "GET",
+          method: "GET",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("userInfo")
             }
