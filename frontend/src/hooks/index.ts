@@ -22,12 +22,12 @@ export const useBlogs = (): { loading: boolean; blogs: Blog[] } => {
         axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
             method: "GET",
             headers: {
-                "Authorization": localStorage.getItem("userInfo")
+                "Authorization": `Bearer ${localStorage.getItem("userInfo")}`
             }
         })
             .then(response => {
-                setBlogs(response.data.blogs);
-                console.log(response.data.blogs)
+                setBlogs(response.data);
+                console.log(response.data)
                 setLoading(false);
             })
             .catch(error => {
@@ -49,7 +49,7 @@ export const useBlog = ({ id }: { id: string }) => {
 
     useEffect(() => {
         axios.get(`${BACKEND_URL}/api/v1/blog/${id}`, {
-          method: "GET",
+            method: "GET",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("userInfo")
             }

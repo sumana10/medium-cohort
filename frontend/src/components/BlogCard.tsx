@@ -33,7 +33,7 @@ const BlogCard = ({ id, publishedDate, content, title, authorName }: BlogCardPro
                 <div className='text-slate-500 text-sm font-thin pt-4'>
                     {`${Math.ceil(content?.length / 100)} minutes`}
                 </div>
-              
+
             </div>
         </Link>
     )

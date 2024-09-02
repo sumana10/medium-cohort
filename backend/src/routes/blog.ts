@@ -2,8 +2,7 @@ import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
 import { sign, verify } from "hono/jwt";
-import { createBlogInput,updateBlogInput } from "@sumana1005/medium-common";
-
+import { createBlogInput, updateBlogInput } from "@sumana1005/medium-common";
 
 
 export const blogRouter = new Hono<{
@@ -20,8 +19,9 @@ blogRouter.use('/*', async (c, next) => {
 
 	try {
 		const response = await verify(token, c.env.JWT_SECRET);
+		
 		if (response.id) {
-			c.set("userId", response.id);
+			c.set("userId", String(response.id));
 			await next()
 		} else {
 			c.status(403);
@@ -35,8 +35,7 @@ blogRouter.use('/*', async (c, next) => {
 })
 
 blogRouter.post('/', async (c) => {
-	//@ts-ignore
-	 const userId = c.get('userId');
+	const userId = c.get('userId');
 	//const userId = "random"
 	const prisma = new PrismaClient({
 		datasourceUrl: c.env?.DATABASE_URL,
@@ -53,10 +52,9 @@ blogRouter.post('/', async (c) => {
 	return c.json({
 		id: post.id
 	});
- })
+})
 
 blogRouter.put('/', async (c) => {
-	//@ts-ignore
 	const userId = c.get('userId');
 	const prisma = new PrismaClient({
 		datasourceUrl: c.env?.DATABASE_URL,
@@ -84,18 +82,18 @@ blogRouter.get('/bulk', async (c) => {
 	const prisma = new PrismaClient({
 		datasourceUrl: c.env?.DATABASE_URL,
 	}).$extends(withAccelerate());
-	
+
 	const posts = await prisma.post.findMany({
 		select: {
-            content: true,
-            title: true,
-            id: true,
-            author: {
-                select: {
-                    name: true
-                }
-            }
-        }
+			content: true,
+			title: true,
+			id: true,
+			author: {
+				select: {
+					name: true
+				}
+			}
+		}
 	});
 
 	return c.json(posts);
@@ -115,36 +113,3 @@ blogRouter.get('/:id', async (c) => {
 
 	return c.json(post);
 })
-
-// blogRouter.get('/single/:id', async (c) => {
-//     const id = c.req.param('id')
-
-//    // const body = await c.req.json()
-
-//     const prisma = new PrismaClient({
-//         datasourceUrl: c.env.DATABASE_URL,
-//     }).$extends(withAccelerate());
-
-//     const blog = await prisma.post.findUnique({
-//         where: {
-//             id
-//         },
-//         select: {
-//             title: true,
-//             content: true,
-//             author: {
-//                 select: {
-//                     name:true
-//                 }
-//             }
-//         }
-//     })
-
-//     if (!blog) {
-//         c.status(404)
-//         return c.json({error:"Blog not found"})
-//     }
-
-//     return c.json(blog)
-
-//   })
