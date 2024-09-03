@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "fa50f09a-91fc-44c6-9dcc-4bb82d635a0b",
+		"name": "medium",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13774837"
+	},
+	"item": [
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmM2Q5OTA2LWJlNzEtNDgzMi1hZmEyLWNmZDBhOGFmYzk3ZiJ9.9_-3mHvUt2XGKTFdCeAlNNJ7QgdSMWOnS-95NpOI3QM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1@gmail.com\",\r\n    \"password\": \"1234567\"\r\n   \r\n\t\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8787/api/v1/user/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8787",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzYjE5MTBkLWJlNmUtNGY4ZC1iNWI1LWRkMjE1NTU1ZGFlYyJ9._Ng2Yby9hZCZ6NRBzTrQ1BhI6c1wn1jq5oOxAr9Y_lg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"title\": \"Show your work2\",\r\n    \"content\": \"Self Help\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8787/api/v1/blog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8787",
+					"path": [
+						"api",
+						"v1",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1ZDk3Njc5LTY4NWItNDFjZC1iNjMzLTJiYjE2MmFiNGRhZiJ9.3t9vD4ZSpiDypm6rvNonxwUvJIighpO9SYC-ecFUuLI"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:5173"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:5173/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test10@gmail.com\",\n    \"password\": \"1234567\"\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8787/api/v1/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8787",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"signup"
+					]
+				},
+				"description": "Generated from cURL: curl 'http://localhost:8787/api/v1/blog/dc2095ff-a781-4bc5-820d-35f33140305c' \\\n  -H 'Accept: application/json, text/plain, */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1ZDk3Njc5LTY4NWItNDFjZC1iNjMzLTJiYjE2MmFiNGRhZiJ9.3t9vD4ZSpiDypm6rvNonxwUvJIighpO9SYC-ecFUuLI' \\\n  -H 'Connection: keep-alive' \\\n  -H 'DNT: 1' \\\n  -H 'Origin: http://localhost:5173' \\\n  -H 'Referer: http://localhost:5173/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"' \\\n  -H 'sec-ch-ua-mobile: ?1' \\\n  -H 'sec-ch-ua-platform: \"Android\"'"
+			},
+			"response": []
+		},
+		{
+			"name": "blogs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzYjE5MTBkLWJlNmUtNGY4ZC1iNWI1LWRkMjE1NTU1ZGFlYyJ9._Ng2Yby9hZCZ6NRBzTrQ1BhI6c1wn1jq5oOxAr9Y_lg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8787/api/v1/blog/f898fbdf-da22-47b3-a0c4-fa8b272606fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8787",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"f898fbdf-da22-47b3-a0c4-fa8b272606fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blog",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzYjE5MTBkLWJlNmUtNGY4ZC1iNWI1LWRkMjE1NTU1ZGFlYyJ9._Ng2Yby9hZCZ6NRBzTrQ1BhI6c1wn1jq5oOxAr9Y_lg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8787/api/v1/blog/f898fbdf-da22-47b3-a0c4-fa8b272606fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8787",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"f898fbdf-da22-47b3-a0c4-fa8b272606fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blog",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzYjE5MTBkLWJlNmUtNGY4ZC1iNWI1LWRkMjE1NTU1ZGFlYyJ9._Ng2Yby9hZCZ6NRBzTrQ1BhI6c1wn1jq5oOxAr9Y_lg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : \"042bc7b5-1abf-460f-8857-ea1145c529be\",\n    \"title\": \"Psychology Of Money\",\n    \"content\": \"Self Help\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8787/api/v1/blog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8787",
+					"path": [
+						"api",
+						"v1",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

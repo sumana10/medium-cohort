@@ -56,6 +56,10 @@
    npm run dev
    ```
 
+6. **Test Your Backend:**
+
+   Import the `medium.postman_collection` file into Postman to test your backend endpoints.
+
 ## Frontend Setup
 
 1. **Navigate to the Frontend Directory:**
@@ -79,4 +83,3 @@
    ```bash
    npm run dev
    ```
-
